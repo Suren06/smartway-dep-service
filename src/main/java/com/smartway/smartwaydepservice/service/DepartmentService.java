@@ -5,6 +5,7 @@ import com.smartway.smartwaydepservice.model.Department;
 
 public interface DepartmentService {
 
-    Department saveDepartment(Department department);
     Department findById(Long departmentId);
+    Department save(Department department);
+    Department update(Department department, Long id);
 }

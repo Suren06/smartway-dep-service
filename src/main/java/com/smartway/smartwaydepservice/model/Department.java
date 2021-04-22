@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -19,15 +17,24 @@ import java.time.LocalDateTime;
 public class Department {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "department_id")
     private Long departmentId;
+    @Column(name = "department_name")
     private String departmentName;
+    @Column(name = "department_address")
     private String departmentAddress;
+    @Column(name = "department_code")
     private String departmentCode;
+    @Column(name = "created_by")
     private String createdBy;
-    private LocalDateTime createdDate;
+    @Column(name = "created_date")
+    private Date createdDate;
+    @Column(name = "updated_by")
     private String updatedBy;
-    private LocalDateTime updatedDate;
+    @Column(name = "updated_date")
+    private Date updatedDate;
+    @Column(name = "is_active")
     private Boolean is_active;
 
 }
