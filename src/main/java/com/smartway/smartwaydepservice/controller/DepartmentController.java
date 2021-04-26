@@ -10,14 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/api")
+@RequestMapping("/departments")
 @Slf4j
 public class DepartmentController {
 
     @Autowired
     private DepartmentService departmentService;
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<Department> createDepartment(@RequestBody Department department) {
         return ResponseEntity.status(HttpStatus.CREATED).body(departmentService.save(department));
     }
